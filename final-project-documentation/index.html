@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>WCC Portfolio - Demo Page</title>
+
+        <!-- including for some global styling -->
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+    <body>
+        <!-- if you have sub-pages think about adding a simple back button -->
+        <nav>
+            <a href="../">HOME</a>
+        </nav>
+        <header class="documentation-header">
+            <section class="center-text">
+                <h1>Hunger</h1>
+                <h2>by Kruti Shah</h6>
+                <p>Physical data visualization.</p> 
+            </section>
+        </header>
+
+        <main class="documentation-page">
+            <section>
+                <div class="responsive-video centered-content">
+                    <iframe title="vimeo-player" src="https://player.vimeo.com/video/822762548" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </section>
+            <section>
+                <h3>Introduction</h3>
+                <p>Hunger is an interactive artwork installation between a computer and a physical object which is in motion. It 
+                    provides information regarding the world hunger crisis in different continents for the past 5 years. The user can 
+                    select the continent and the camera will detect color using computer vision, lot of circles that resemble people
+                    ﬁghting for food in a given year will revolve around the circles showing the hunger crisis.</p>
+            </section>
+            <section>
+                <h3>Concept and Background Research</h3>
+                
+                <p>Many artists in the past have used food crises as inspiration to build their art work using data. For example, 
+                    artists from Somerville, Massachusetts turned data on food security into art by making a sculpture of stainless 
+                    steel utensils on a table, where each of the 1659 households in their locality is represented by one knife, spoon, 
+                    or fork. 
+                    In the past many years, data has been a source of inspiration for many artists. They have converted boring num-
+                    bers into physical artifacts. One such collection of artifacts can be reviewed in “http://dataphys.org/list/” which 
+                    shows the list of different data visualization techniques. These inspired me to explore more into this topic of 
+                    physical visualization.</p>
+                <p>I come from a country where food insecurity and hunger are one of the challenges people face on an everyday 
+                    basis. But covid worsened the situation as migrant workers in India were struggling to make there ends meet. 
+                    While looking at the data by “our world in data.org” I went through some big numbers that it is faced by millions 
+                    of people all around the world. According to data one in four suffered insecurity in 2017. The most affected ar-
+                    eas are South Asian and sub-Saharan Africa. The graph shows the number of undernourished individuals around 
+                    the world in the past two decades. It indicates the total number of undernourished has been steadily falling. 
+                    However, we can see the change in trend increased by 663 million in 2017. South Asian countries have the high-
+                    est number of malnourished individual in 2021. </p>
+                
+                <!-- if you have a full width image try make it not too tall -->
+                <img src="../assets/images/map-2.png"/>
+                
+            </section>
+            <section>
+                <h3>Technical Implementation</h3>
+
+                <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-full">
+                    <div class="flex-item">
+                        <img src="../assets/images/graph.png"/>
+                    </div>
+                    
+                    <p>The hardware that was used in the project are as follows:<br>
+                        1. Rasberry Pi pico W-(RP2040-based board)</br>
+                        2. stepper motor-(Uln2003)<br>
+                        3. Stepper motor driver</br>
+                        4. Perfboard<br>
+                        5. Jumper wires</br>
+                        6. WebCam<br>
+                        There were three sets of code that were used in the project:</br>
+                        1. P5.js for cylinder data visualization.<br>
+                        Here the data from JSON ﬁ le was converted into a basic line graph which was then edited in Illustrator to make
+                        laser cut drawing for the cylinder.</br>
+                        2. Arduino Code<br>
+                        I have used accel stepper library examples of stepper_onerevolution to turn the motor 360 degrees. The speed at
+                        which the motor rotated was adjusted by synchronizing it with the computer vision code.</br>
+                        3.P5.js code<br>
+                        A separate particle class was created to add acceleration and velocity to the particles. The color of the 
+                        particles also modiﬁ es the color it’s tracking. The laws of force are used to create these multi-agents system
+                        interaction </br></p>
+            
+                <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-half ">
+                    <div class="flex-item">
+                        <img src="../assets/images/Process_1.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/Process_2.jpg"/>
+                    </div>
+                </div>
+
+                <!-- default flex item is for 4 & follows media query styling for home page -->
+                <div class="flex-container flex-basis-third">
+                    <div class="flex-item">
+                        <img src="../assets/images/Process_3.png"/>
+                    
+                </div>
+         
+            </section>
+            <section>
+                <h3>Reflection and Future Development</h3>
+                <p>The animation of the particles revolving around the color looks very simple and basic, I would like to create more 
+                    interesting graphics by simulating the number of particles depending on the data. In addition, I would also like to 
+                    add more physical simulations like when two particles strike each other, the repulsion force it creates will look 
+                    quite interesting. I would also like to project these graphics on the physical object using the projector. The main 
+                    challenge for these will be using 
+                    computer vision and projection mapping together.
+                    Furthermore, I would like to develop the cylinder into a more complex 3d artifact that will rotate in different direc-
+                    tions with distinct speed limits</p>
+            </section>
+            <section>
+                <h3>References</h3>
+                <ul>
+                    <li>https://globalparliamentofmayors.org/call-to-action-to-prevent-long-term-global-food-crisis/</li>
+                    <li>https://ourworldindata.org/hunger-and-undernourishment</li>
+                    <li>https://www.artshelp.com/data-sculpture-food-insecurity/</li>
+                    <li>http://dataphys.org/list/</li>
+                    <li>https://editor.p5js.org/jeﬀ Thompson/sketches/30YhUmgVU</li>
+                    <li>https://www.youtube.com/watch?v=Joy4NQPIOxk&ab_channel=Jeﬀ Thompson</li>
+                    <li>https://editor.p5js.org/codingtrain/sketches/6WL2O4vq0</li>
+                    <li>https://editor.p5js.org/codingtrain/sketches/AxuChwlgb</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <!-- normally information like contact details etc  -->
+            <!-- read more about semantic HTML https://www.w3schools.com/html/html5_semantic_elements.asp -->
+            
+         </footer>
+    </body>
+</html>
