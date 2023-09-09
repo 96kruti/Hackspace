@@ -48,6 +48,9 @@
                     staircase then another one. I was quite intrigued, these were when I started exploring. There were several questions in 
                     my mind that I wanted to explore. Why dont we have data that shows paths/motion people take to consciously or 
                     unconsciously? This was the initial thought.</p>
+                <!-- if you have a full width image try make it not too tall -->
+                <img src="../assets/images/duchamp-nude-portray-motion.jpg"/>
+                <img src="../assets/images/balla-dog-on-a-leash.jpg"/>
                 <p>Many artists get inspired by people moving in a space, for example when we look at Marcel Duchamp's Nude Descending 
                     a Staircase from 1912, the artist has painted the motion of a person moving across a staircase which captures the 
                     essence of time and space. Though the medium of painting was oil on canvas. In many other Artists like Giacomo Balla's 
@@ -60,67 +63,77 @@
                    the strokes were created using machines. These were my practices belonging in conjunction with the 
                    traditional art and machines. The art of showing movement in real-time and then making it history was my main 
                    Idea behind the whole project.</p>
+                   <div class="flex-container flex-basis-half ">
+                    <div class="flex-item">
+                        <img src="../assets/images/church_1.jpeg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/church_2.png"/>
+                    </div>
+                </div>
+                <p>Different Parts of the church radiate different Energy. For these projects, I was just having a few sensors 
+                   covering each floor in this building. It was quite interesting to see how machines left marks for people who 
+                   visited the church. </p>
                 
-                <!-- if you have a full width image try make it not too tall -->
-                <img src="../assets/images/map-2.png"/>
+                
+                
                 
             </section>
             <section>
                 <h3>Technical Implementation</h3>
 
                 <!-- example of styling for three images, you can write your own styling -->
-                <div class="flex-container flex-basis-full">
-                    <div class="flex-item">
-                        <img src="../assets/images/graph.png"/>
-                    </div>
-                    
-                    <p>The hardware that was used in the project are as follows:<br>
-                        1. Rasberry Pi pico W-(RP2040-based board)</br>
-                        2. stepper motor-(Uln2003)<br>
-                        3. Stepper motor driver</br>
-                        4. Perfboard<br>
-                        5. Jumper wires</br>
-                        6. WebCam<br>
-                        There were three sets of code that were used in the project:</br>
-                        1. P5.js for cylinder data visualization.<br>
-                        Here the data from JSON ﬁ le was converted into a basic line graph which was then edited in Illustrator to make
-                        laser cut drawing for the cylinder.</br>
-                        2. Arduino Code<br>
-                        I have used accel stepper library examples of stepper_onerevolution to turn the motor 360 degrees. The speed at
-                        which the motor rotated was adjusted by synchronizing it with the computer vision code.</br>
-                        3.P5.js code<br>
-                        A separate particle class was created to add acceleration and velocity to the particles. The color of the 
-                        particles also modiﬁ es the color it’s tracking. The laws of force are used to create these multi-agents system
-                        interaction </br></p>
-            
-                <!-- example of styling for three images, you can write your own styling -->
-                <div class="flex-container flex-basis-half ">
-                    <div class="flex-item">
-                        <img src="../assets/images/Process_1.jpg"/>
-                    </div>
-                    <div class="flex-item">
-                        <img src="../assets/images/Process_2.jpg"/>
-                    </div>
-                </div>
-
-                <!-- default flex item is for 4 & follows media query styling for home page -->
-                <div class="flex-container flex-basis-third">
-                    <div class="flex-item">
-                        <img src="../assets/images/Process_3.png"/>
-                    
-                </div>
+                    <p>The whole project can be divided into three parts. 
+                        1. Data collection of people entering and exiting the building: It is A PCB that has a laser and LDR sensor 
+                        in it with a raspberry pi Pico W microcontroller that takes the timestamp of people entering and going out 
+                        of the building. The reason for taking this data was to get a comprehensive idea of people's footprint. 
+                        They were placed near the door in different parts of the church. In total, there were four sensors, one 
+                        on each floor. This data collected was then converted into a JSON file. </p>
+                        <div class="flex-container flex-basis-half ">
+                            <div class="flex-item">
+                                <img src="../assets/images/circuit_dia_laser.png"/>
+                            </div>
+                            <div class="flex-item">
+                                <img src="../assets/images/laser.jpeg"/>
+                            </div>
+                    <p>2. The Drawing Machine: The final output were pens drawing different random trails on paper in 
+                        different colors showing different density of people in different areas. Here the pens were tied 
+                        with thread which moved up and down based on the stepper motor connected with them. The whole set 
+                        of motor and raspberry Pi Pico W were kept in the black box hanging from the ceiling. The reason 
+                        for using pens was to reduce friction, such that even a small touch can mark a trail on paper. 
+                        The P5.JS sketch sent signals to Raspberry Pi Pico W in the black box in different intervals of 
+                        timeframes which was based on the JSON file we got from the people. This interval made a beautiful 
+                        dataset for each day </p>
+                        <div class="flex-container flex-basis-half ">
+                            <div class="flex-item">
+                                <img src="../assets/images/stepper.png"/>
+                            </div>
+                            <div class="flex-item">
+                                <img src="../assets/images/paper.jpg"/>
+                            </div>
+        <!-- default flex item is for 4 & follows media query styling for home page -->
+                <img src="../assets/images/111111.jpg"/>
+                <p>3. Projection Mapping: The last part of the project was the projection mapping of the same data that 
+                    was collected as a JSON file. Here I took a drawing of the building and changed the pixel density in it. 
+                    Different particles representing people were seen moving from left to right, as they moved pixels around
+                    them changed which represents the change in the atmosphere as someone enters a space.</p>
+                    <div class="flex-container flex-basis-half ">
+                        <div class="flex-item">
+                            <img src="../assets/images/123.JPG"/>
+                        </div>
+                        
          
             </section>
             <section>
                 <h3>Reflection and Future Development</h3>
-                <p>The animation of the particles revolving around the color looks very simple and basic, I would like to create more 
-                    interesting graphics by simulating the number of particles depending on the data. In addition, I would also like to 
-                    add more physical simulations like when two particles strike each other, the repulsion force it creates will look 
-                    quite interesting. I would also like to project these graphics on the physical object using the projector. The main 
-                    challenge for these will be using 
-                    computer vision and projection mapping together.
-                    Furthermore, I would like to develop the cylinder into a more complex 3d artifact that will rotate in different direc-
-                    tions with distinct speed limits</p>
+                <p>I would like to explore the movement of people, especially in big spaces like shopping centers 
+                    and malls for my data collection. For the artwork, I would like to use other mediums instead of 
+                    pen and paper like smashing tiles that will create colorful mosaics on the floor which represent 
+                    the intensity of people's footprint. Networking and managing the whole timeframe were the biggest 
+                    challenges I faced during my final artwork. I was really happy with the whole concept, but I wanted 
+                    to develop my artwork. I also feel there were too many elements in my work which made it a little 
+                    confusing for everyone to understand the source from which data was collected. I would like to make 
+                    a little minimal for my future explorations.  </p>
             </section>
             <section>
                 <h3>References</h3>
